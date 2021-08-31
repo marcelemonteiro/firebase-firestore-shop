@@ -1,0 +1,7 @@
+{
+  "name": "boxta",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

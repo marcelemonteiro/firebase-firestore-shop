@@ -1,0 +1,22 @@
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button routerLinkActive="tb-selected" routerLink="/home" class="ios" tab="home">
+      <ion-icon name="list"></ion-icon>
+      <ion-label>Produtos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button routerLinkActive="tb-selected" routerLink="/details" class="ios" tab="details">
+      <ion-icon name="add-circle"></ion-icon>
+      <ion-label>Add Produto</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button routerLinkActive="tb-selected" routerLink="/cart" class="ios" tab="cart">
+      <ion-icon name="cart"></ion-icon>
+      <ion-label>Carrinho</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

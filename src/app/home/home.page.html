@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Shop
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ios list-ios hydrated">
+    <ion-list-header class="ios hydrated">
+      Products
+    </ion-list-header>
+  </ion-list>
+
+  <ion-item *ngFor="let product of products" class="user-list">
+    <ion-label>
+      <h5>
+        {{ product.name }}
+      </h5>
+      <p>
+        {{ product.price | currency: 'BRL'}}
+      </p>
+      <p>
+        {{ product.category }}
+      </p>
+    </ion-label>
+
+    <div class="item-note" item-end>
+      <button ion-button clear [routerLink]="['/details/', product.id]">
+        <ion-icon name="create" style="zoom:2.0"></ion-icon>
+      </button>
+
+      <button ion-button clear (click)="deleteProduct(product.id)">
+        <ion-icon name="trash" style="zoom:2.0"></ion-icon>
+      </button>
+
+      <button ion-button (click)="addToCart(product.id)">
+        <ion-icon name="add" style="zoom:2.0"></ion-icon>
+      </button>
+    </div>
+  </ion-item>
+</ion-content>

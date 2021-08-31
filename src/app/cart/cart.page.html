@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Carrinho</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let product of products">
+
+    <ion-grid>
+      <ion-row class="ion-align-items-center ion-justify-content-between">
+        <ion-col size="4">
+          <ion-label>
+            <h5>
+              {{ product.name }}
+            </h5>
+            <p>
+              {{ product.price | currency: 'BRL'}}
+            </p>
+            <p>
+              {{ product.category }}
+            </p>
+          </ion-label>
+        </ion-col>
+
+        <ion-col size="5">
+          <ion-item color="none" lines="none">
+            <button type="button" (click)="removeQuantidade(product.cartItemId, product.id)">
+              <ion-icon name="remove" slot="start"></ion-icon>
+            </button>
+
+            <ion-input class="ion-text-center" type="number" [value]="product.quantidade" #inputQuantidade readonly>
+            </ion-input>
+
+            <button type="button" (click)="addQuantidade(product.cartItemId, product.id)">
+              <ion-icon name="add" slot="end"></ion-icon>
+            </button>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size="2">
+          <button type="button" (click)="deleteProduct(product.cartItemId)">
+            <ion-icon name="close" style="zoom:2.0"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-item>
+
+</ion-content>
